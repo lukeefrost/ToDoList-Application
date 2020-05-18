@@ -73,7 +73,8 @@ class ToDosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $todo = ToDo::find($id);
+        return view('edit')->With('todo', $todo);
     }
 
     /**
@@ -85,7 +86,14 @@ class ToDosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $todo = ToDo::find($id);
+        $todo->title = $request->input('title');
+        $todo->content = $request->input('content');
+        $todo->due = $request->input('due');
+        $todo->save();
+
+        return redirect('/')->with('success', 'ToDo updated successfully');
+        //dd($request, $id);
     }
 
     /**

@@ -8,5 +8,6 @@
 </div>
 <hr>
 <p>{{ $todo->content }}</p>
+<a href="/todo/{{ $todo->id }}/edit" class="btn btn-primary mt-2">Edit</a>
 
 @endsection
