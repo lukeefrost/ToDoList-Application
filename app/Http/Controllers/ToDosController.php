@@ -104,6 +104,10 @@ class ToDosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $todo = ToDo::find($id);
+        $todo->delete();
+
+        return redirect('/')->with('success', 'ToDo deleted successfully');
+        //dd($id);
     }
 }
