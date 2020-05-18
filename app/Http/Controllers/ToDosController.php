@@ -14,7 +14,7 @@ class ToDosController extends Controller
      */
     public function index()
     {
-        $todos = ToDo::get();
+        $todos = ToDo::orderBy('created_at', 'desc')->get();
         //dd($todos);
         return view('index')->with('todos', $todos);
     }
@@ -48,7 +48,9 @@ class ToDosController extends Controller
      */
     public function show($id)
     {
-        //
+        $todo = ToDo::find($id);
+        return view('show')->with('todo', $todo);
+        //dd($id);
     }
 
     /**
