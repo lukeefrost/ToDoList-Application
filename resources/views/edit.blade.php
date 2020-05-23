@@ -8,7 +8,7 @@
   @method('PUT')
   <div class="form-group">
     <label for="title">Title</label>
-    <input type="text" class="form-control" name="title "id="title" placeholder="Enter Title" value="{{ $todo->title }}">
+    <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title" value="{{ $todo->title }}">
   </div>
   <div class="form-group">
     <label for="content">Content</label>
